@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProNatur___Biomarkt_GmbH;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +34,12 @@ namespace ProNatur_Biomarkt_GmbH
             {
                 LoadingBarTimer.Stop();
 
-                //Finish Loading
+                //Finish Loading show main menu screen
+
+                MainMenuScreen mainMenuScreen = new MainMenuScreen();
+                mainMenuScreen.Show();
+
+                this.Hide();
             }
         }
 
