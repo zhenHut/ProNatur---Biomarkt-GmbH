@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -74,6 +75,40 @@ namespace ProNatur___Biomarkt_GmbH
 
         private void btnProductEdit_Click(object sender, EventArgs e)
         {
+            if (_lastSelectedProductKey == 0)
+            {
+                MessageBox.Show("Bitte wähle zuerst ein Produkt aus.");
+                return;
+            }
+            string query = "update Products set Name=@ProductName, " +
+                "Brand= @ProductBrand, Category= @ProductCategory, Price=@ProductPrice where Id=@ProductId";
+
+            string productName = textBoxProductName.Text;
+            string productBrand = textBoxProductBrand.Text;
+            string productCategory = comboBoxProductCategory.Text;
+            int productId = _lastSelectedProductKey;
+            decimal productPrice = 0;
+            bool isValidPrice = decimal.TryParse(textBoxProductPrice.Text, out productPrice);
+
+            if (!isValidPrice)
+            {
+                MessageBox.Show("Bitte geben Sie einen gültigen Preis ein.");
+                return;
+            }
+
+            List<SqlParameter> parameterList = new List<SqlParameter>
+            {
+
+                new SqlParameter("@ProductName", productName),
+                new SqlParameter("@ProductBrand", productBrand),
+                new SqlParameter("@ProductCategory", productCategory),
+                new SqlParameter("@ProductPrice", productPrice),
+                new SqlParameter("@ProductId",_lastSelectedProductKey)
+
+            };
+
+            ExecuteQuery(query, parameterList);
+
             ShowProducts();
         }
 
