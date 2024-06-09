@@ -44,6 +44,7 @@
             this.BtnProduct.TabIndex = 0;
             this.BtnProduct.Text = "Produkte Verwalten";
             this.BtnProduct.UseVisualStyleBackColor = true;
+            this.BtnProduct.Click += new System.EventHandler(this.BtnProduct_Click);
             // 
             // BtnBill
             // 
@@ -65,7 +66,9 @@
             this.ClientSize = new System.Drawing.Size(620, 201);
             this.Controls.Add(this.BtnBill);
             this.Controls.Add(this.BtnProduct);
+            this.MaximizeBox = false;
             this.Name = "MainMenuScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenuScreen";
             this.ResumeLayout(false);
 
