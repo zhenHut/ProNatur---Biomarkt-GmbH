@@ -68,7 +68,6 @@ namespace ProNatur___Biomarkt_GmbH
             };
             ExecuteQuery(query, parameters);
 
-
             ClearAllFields();
             ShowProducts();
         }
@@ -151,7 +150,7 @@ namespace ProNatur___Biomarkt_GmbH
 
                 if (parametersList.Count == 0)
                 {
-                    MessageBox.Show("");
+                    MessageBox.Show("Parameter Liste ist leer");
                     return;
                 }
                 foreach (var parameter in parametersList)
@@ -187,6 +186,17 @@ namespace ProNatur___Biomarkt_GmbH
             textBoxProductPrice.Text = productsDGV.SelectedRows[0].Cells[4].Value.ToString();
 
             _lastSelectedProductKey = (int)productsDGV.SelectedRows[0].Cells[0].Value;
+        }
+
+        private void BtnProgramClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
+        private void ProductsScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

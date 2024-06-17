@@ -42,6 +42,8 @@
             this.btnProductClear = new System.Windows.Forms.Button();
             this.btnProductEdit = new System.Windows.Forms.Button();
             this.productsDGV = new System.Windows.Forms.DataGridView();
+            this.BtnProgramClose = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.productsDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,12 +219,26 @@
             this.productsDGV.TabIndex = 13;
             this.productsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDGV_CellContentClick);
             // 
+            // BtnProgramClose
+            // 
+            this.BtnProgramClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.BtnProgramClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnProgramClose.ForeColor = System.Drawing.Color.White;
+            this.BtnProgramClose.Location = new System.Drawing.Point(668, 11);
+            this.BtnProgramClose.Name = "BtnProgramClose";
+            this.BtnProgramClose.Size = new System.Drawing.Size(119, 23);
+            this.BtnProgramClose.TabIndex = 14;
+            this.BtnProgramClose.Text = "Programm verlassen";
+            this.BtnProgramClose.UseVisualStyleBackColor = false;
+            this.BtnProgramClose.Click += new System.EventHandler(this.BtnProgramClose_Click);
+            // 
             // ProductsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(799, 461);
+            this.Controls.Add(this.BtnProgramClose);
             this.Controls.Add(this.productsDGV);
             this.Controls.Add(this.btnProductEdit);
             this.Controls.Add(this.btnProductClear);
@@ -241,6 +257,7 @@
             this.Name = "ProductsScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produkte";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProductsScreen_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.productsDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,5 +279,7 @@
         private System.Windows.Forms.Button btnProductClear;
         private System.Windows.Forms.Button btnProductEdit;
         private System.Windows.Forms.DataGridView productsDGV;
+        private System.Windows.Forms.Button BtnProgramClose;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
