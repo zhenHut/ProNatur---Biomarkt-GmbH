@@ -180,7 +180,7 @@
             this.btnProductClear.TabIndex = 11;
             this.btnProductClear.Text = "Felder Leeren";
             this.btnProductClear.UseVisualStyleBackColor = false;
-            this.btnProductClear.Click += new System.EventHandler(this.btnProductClear_Click);
+            this.btnProductClear.Click += new System.EventHandler(this.BtnProductClear_Click);
             // 
             // btnProductEdit
             // 
@@ -193,7 +193,7 @@
             this.btnProductEdit.TabIndex = 12;
             this.btnProductEdit.Text = "Bearbeiten";
             this.btnProductEdit.UseVisualStyleBackColor = false;
-            this.btnProductEdit.Click += new System.EventHandler(this.btnProductEdit_Click);
+            this.btnProductEdit.Click += new System.EventHandler(this.BtnProductEdit_Click);
             // 
             // productsDGV
             // 
@@ -217,7 +217,7 @@
             this.productsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productsDGV.Size = new System.Drawing.Size(771, 286);
             this.productsDGV.TabIndex = 13;
-            this.productsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDGV_CellContentClick);
+            this.productsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsDGV_CellContentClick);
             // 
             // BtnProgramClose
             // 

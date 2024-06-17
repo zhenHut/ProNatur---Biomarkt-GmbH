@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProNatur___Biomarkt_GmbH
 {
     public partial class MainMenuScreen : Form
     {
+        #region Constructor
         public MainMenuScreen()
         {
             InitializeComponent();
         }
+        #endregion
 
+
+        #region Events
         private void BtnProduct_Click(object sender, EventArgs e)
         {
             ProductsScreen productsScreen = new ProductsScreen();
@@ -28,5 +25,7 @@ namespace ProNatur___Biomarkt_GmbH
         {
             Application.Exit();
         }
+        #endregion
+
     }
 }

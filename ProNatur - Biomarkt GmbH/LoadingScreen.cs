@@ -1,25 +1,23 @@
 ﻿using ProNatur___Biomarkt_GmbH;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProNatur_Biomarkt_GmbH
 {
     public partial class LoadingScreen : Form
     {
+        #region Constructor
         public LoadingScreen()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Fields
         private int loadingBarValue;
+        #endregion
 
+        #region Events
         private void LoadingScreen_Load(object sender, EventArgs e)
         {
             LoadingBarTimer.Start();
@@ -28,9 +26,9 @@ namespace ProNatur_Biomarkt_GmbH
         {
             loadingBarValue++;
 
-            LblLoadingProgress.Text =loadingBarValue.ToString()+"%";
+            LblLoadingProgress.Text = loadingBarValue.ToString() + "%";
             loadingProgressBar.Value = loadingBarValue;
-            if (loadingBarValue >= 100) 
+            if (loadingBarValue >= 100)
             {
                 LoadingBarTimer.Stop();
 
@@ -42,7 +40,11 @@ namespace ProNatur_Biomarkt_GmbH
                 this.Hide();
             }
         }
+        #endregion
 
-        
+
+
+
+
     }
 }
